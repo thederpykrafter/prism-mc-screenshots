@@ -20,7 +20,7 @@ else
     source=$instance
     link=$(echo $instance | sed "s/\/home\/$USER\/.local\/share\/PrismLauncher\/instances\///g" | sed "s/\/minecraft\/screenshots//g")
 
-    [[ ! -d ~/Pictures/mc-shots ]] && mkdir -p
+    [[ ! -d ~/Pictures/mc-shots ]] && mkdir -p ~/Pictures/mc-shots
     [[ ! -L $mc_shots/$link ]] && ln -s $source $mc_shots/$link && echo "ln -s $source $mc_shots/$link"
   done
 
