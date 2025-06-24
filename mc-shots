@@ -6,8 +6,7 @@ mc_shots=~/Pictures/mc-shots
 s_prism=$(find $prism_dir -mindepth 1 -maxdepth 1 -type d -printf "%f\n")
 s_mc=$(find $mc_shots -type l -printf "%f\n")
 
-if [[ $s_prism == $s_mc ]];
-then
+if [[ $s_prism == $s_mc ]]; then
   echo good
   exit 0
 else
@@ -15,8 +14,8 @@ else
 
   [[ $broken_link != "" ]] && rm -f $broken_link
 
-  IFS=$'\n'; for instance in $(find . $prism_dir -name screenshots -type d);
-  do
+  IFS=$'\n'
+  for instance in $(find . $prism_dir -name screenshots -type d); do
     source=$instance
     link=$(echo $instance | sed "s/\/home\/$USER\/.local\/share\/PrismLauncher\/instances\///g" | sed "s/\/minecraft\/screenshots//g")
 
